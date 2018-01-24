@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Compare Clusters</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href={% static "/css/master.css" %}>
+  </head>
+  <body>
+    <h1>This is a Page for Cluster config comparision</h1>
+    <nav class='navbar navbar-default navbar-static-top'>
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><a class="navbar-brand"  href="{% url 'compare_cluster:cluster_name' %}">list clusters</a></li>
+          <li><a class="navbar-link" href="{% url 'compare_cluster:home' %}">Home</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>

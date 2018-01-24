@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DWS Supported cluster</title>
+  </head>
+  <body>
+    
+    <link rel="stylesheet" href={% static "/css/master.css" %}>
+    <h1>This are cluster managed by DWS</h1>
+    <a href="{% url 'compare_cluster:compare'%}">compare cluster</a>
+    <a href="{% url 'compare_cluster:home'%}">home</a>
+
+    <div id="content">
+      <img src="{% static "images/barclays.png" %}" alt="Oh Oooops" class="ribbon"/>
+    </div>
+  </body>
+</html>

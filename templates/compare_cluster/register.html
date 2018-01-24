@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>user info</title>
+    
+    <link rel="stylesheet" href={% static "/css/master.css" %}>
+  </head>
+  <body>
+    <h1> This is list of cluster</h1>
+    <div class="navbar-header">
+        <a href="{% url 'compare_cluster:home'%}">home</a>
+        <a href="{% url 'compare_cluster:compare'%}">compare cluster</a>
+    </div>
+
+     {% if Env_name %}
+      <div class="container">
+
+      {% for clus in Env_name %}
+      <ul>
+        <li> Environment : {{ clus.env_name }}</li>
+      </ul>
+      {% endfor %}
+    </div>
+      {% endif %}
+</html>
